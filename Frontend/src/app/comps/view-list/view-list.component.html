@@ -1,0 +1,26 @@
+<!-- <app-volunteer (create)="createVolunteer()"></app-volunteer> -->
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone</th>
+        <th scope="col">City</th>
+        <th scope="col">Languagues</th>
+        <th scope="col">Availability</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of view$">
+        <td>{{ i.id }}</td>
+        <td> {{ i.name }} </td>
+        <td>{{ i.email }}</td>
+        <td>{{ i.phone }}</td>
+        <td>{{ i.city }}</td>
+        <td>{{ i.languages }}</td>
+        <td>{{ i.availability }}</td>
+      </tr>
+    </tbody>
+  </table>

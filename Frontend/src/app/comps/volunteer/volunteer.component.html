@@ -1,0 +1,92 @@
+<form [formGroup]="volunteerForm" (ngSubmit)="volunteerSubmit(volunteerForm.value)" #formDirective="ngForm">
+
+    <div class="mb-3">
+        <label class="form-label">Name</label>
+
+        <input type="text" class="form-control" placeholder="John Smith" name="name" formControlName="name">
+
+        <span style="color: red;" *ngIf="nameValidator && nameValidator.invalid && nameValidator.touched">
+            This field is not valid</span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Email address</label>
+
+        <input type="email" class="form-control" placeholder="name@example.com" name="email" formControlName="email">
+
+        <span style="color: red;" *ngIf="emailValidator && emailValidator.invalid && emailValidator.touched">
+            This field is not valid</span>
+    </div>
+
+    <!-- <div class="mb-3">
+        <label class="form-label">Password</label>
+
+        <input type="password" class="form-control" placeholder="Password" name="password" formControlName="password">
+
+        <span style="color: red;" *ngIf="passwordValidator && passwordValidator.invalid && passwordValidator.touched">
+            This field is not valid</span>
+    </div> -->
+
+    <div class="mb-3">
+        <label class="form-label">Phone Number</label>
+
+        <input type="text" class="form-control" placeholder="987654321" name="phone" formControlName="phone">
+
+        <span style="color: red;" *ngIf="phoneValidator && phoneValidator.invalid && phoneValidator.touched">
+            This field is not valid</span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">City</label>
+
+        <select class="form-control" name="city" formControlName="city">
+            <option value="pune">Pune</option>
+            <option value="mumbai">Mumbai</option>
+            <option value="banglore">Banglore</option>
+            <option value="chennai">Chennai</option>
+        </select>
+
+        <span style="color: red;" *ngIf="cityValidator && cityValidator.invalid && cityValidator.touched">
+            This field is not valid</span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Languages </label>
+        <br>
+
+        <div class="form-check form-check-inline" 
+        *ngFor="let lang of languageArray; let i=index">
+
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input form-control" 
+                [value]="lang" name="lang" (change)="onChangeLang($event)">
+
+                {{ lang }}
+            </label>
+        </div>
+
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label"> Availability </label>
+        <br>
+
+        <div class="form-check form-check-inline" 
+        *ngFor="let days of availabilityArray; let i=index">
+
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input form-control" 
+                [value]="days" name="lang" (change)="onChangeAvailability($event)">
+
+                {{ days }}
+            </label>
+        </div>
+
+    </div>
+
+    <br>
+
+    <button type="submit" class="btn btn-primary btn-lg" [disabled]="volunteerForm.invalid">
+        SUBMIT
+    </button>
+</form>

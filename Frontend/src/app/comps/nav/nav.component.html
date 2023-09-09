@@ -1,0 +1,31 @@
+<mat-toolbar >
+    <span>
+      <a routerLink="/" routerLinkActive="active-link">
+        <span>HOME</span>
+      </a>
+      <a routerLink="/program" routerLinkActive="active-link">
+        <span>Program</span>
+      </a>
+      <a routerLink="/volunteer" routerLinkActive="active-link">
+        <span>Volunteer</span>
+      </a>
+      <a routerLink="/view_list" routerLinkActive="active-link">
+        <span>View_List</span>
+      </a>
+    </span>
+    <span>
+      <a *ngIf="isAuthenticated"  routerLinkActive="active-link"  routerLink="/posts">
+        <span>Posts</span>
+      </a>
+      <a  *ngIf="!isAuthenticated"  routerLinkActive="active-link"  routerLink="/login">
+        <span>Login</span>
+      </a>
+      <a  *ngIf="isAuthenticated"  (click)="logout()"  routerLinkActive="active-link"  routerLink="/login">
+        <span>Logout</span>
+      </a>
+      <a  *ngIf="!isAuthenticated"  routerLinkActive="active-link"  routerLink="/signup">
+        <span>Signup</span>
+      </a>
+    </span>
+  </mat-toolbar>
+  

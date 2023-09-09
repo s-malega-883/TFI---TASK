@@ -1,0 +1,20 @@
+// .mat-toolbar.mat-accent {
+//     // background: #4098ff;
+//     color: rgba(0,0,0,.87);
+// }
+mat-toolbar{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 64px;
+    // background-color: rgb(15, 35, 249);
+
+    a {
+        text-decoration: none;
+        &.active-link {
+            color: black;
+        }
+        span{
+            margin-left: 24px;
+        }
+    }
+}
